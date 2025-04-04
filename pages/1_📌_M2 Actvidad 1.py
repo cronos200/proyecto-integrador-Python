@@ -31,13 +31,13 @@ st.header("Solución de la actividad #1")
 st.subheader('Diccionario:')
 
 codigo = '''
-import pandas as pd
+nombre = pd.Series(['luis', 'jhon', 'camilo', 'ana', 'sofia'])
+edad = pd.Series([25,46,32,12,26])
+colores_preferidos = (['rojo', 'azul', 'morado', 'amarillo', 'rosado'])
 
-datos = [{"Nombre": "Ana", "Edad": 25, "Ciudad": "Madrid"},
-         {"Nombre": "Juan", "Edad": 30, "Ciudad": "Barcelona"},
-         {"Nombre": "Pedro", "Edad": 35, "Ciudad": "Sevilla"}]
+my_dataframe = pd.DataFrame({'Nombre': nombre, 'Edad': edad, 'Colores preferidos': colores_preferidos})
 
-df = pd.DataFrame(datos)
+df = pd.DataFrame(my_dataframe)
 
 print(df)
 '''
@@ -45,11 +45,13 @@ print(df)
 st.subheader("📄 Código fuente:")
 st.code(codigo, language='python')
 
-datos = [{"Nombre": "Ana", "Edad": 25, "Ciudad": "Madrid"},
-         {"Nombre": "Juan", "Edad": 30, "Ciudad": "Barcelona"},
-         {"Nombre": "Pedro", "Edad": 35, "Ciudad": "Sevilla"}]
+nombre = pd.Series(['luis', 'jhon', 'camilo', 'ana', 'sofia'])
+edad = pd.Series([25,46,32,12,26])
+colores_preferidos = (['rojo', 'azul', 'morado', 'amarillo', 'rosado'])
 
-df = pd.DataFrame(datos)
+my_dataframe = pd.DataFrame({'Nombre': nombre, 'Edad': edad, 'Colores preferidos': colores_preferidos})
+
+df = pd.DataFrame(my_dataframe)
 
 st.dataframe(df)
 
