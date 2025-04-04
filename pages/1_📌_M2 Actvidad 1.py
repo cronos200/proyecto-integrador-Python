@@ -1,4 +1,5 @@
 import streamlit as st
+import pandas as pd
 
 # Configuración de la página
 st.set_page_config(   
@@ -25,5 +26,32 @@ st.markdown("""
 - Aplicar estos conocimientos en ejemplos prácticos
 """)
 
-st.header("Solución")
+st.header("Solución de la actividad #1")
+
+st.subheader('Diccionario:')
+
+codigo = '''
+import pandas as pd
+
+datos = [{"Nombre": "Ana", "Edad": 25, "Ciudad": "Madrid"},
+         {"Nombre": "Juan", "Edad": 30, "Ciudad": "Barcelona"},
+         {"Nombre": "Pedro", "Edad": 35, "Ciudad": "Sevilla"}]
+
+df = pd.DataFrame(datos)
+
+print(df)
+'''
+
+st.subheader("📄 Código fuente:")
+st.code(codigo, language='python')
+
+datos = [{"Nombre": "Ana", "Edad": 25, "Ciudad": "Madrid"},
+         {"Nombre": "Juan", "Edad": 30, "Ciudad": "Barcelona"},
+         {"Nombre": "Pedro", "Edad": 35, "Ciudad": "Sevilla"}]
+
+df = pd.DataFrame(datos)
+
+st.dataframe(df)
+
+
 
