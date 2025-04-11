@@ -50,10 +50,29 @@ edad = pd.Series([25,46,32,12,26])
 colores_preferidos = (['rojo', 'azul', 'morado', 'amarillo', 'rosado'])
 
 my_dataframe = pd.DataFrame({'Nombre': nombre, 'Edad': edad, 'Colores preferidos': colores_preferidos})
-
 df = pd.DataFrame(my_dataframe)
-
 st.dataframe(df)
 
 
+st.header("Lista de diccionarios:")
 
+codigo = """
+datos = [{'Etnias en colombia': 'indijenas de colombia', 'Poblacion': 500, 'Pais': 'colombia'},
+         {'Etnias en colombia': 'Afrocolombianos', 'Poblacion': 869, 'Pais': 'colombia'},
+         {'Etnias en colombia': 'El pueblo rom', 'Poblacion': 143, 'Pais': 'colombia'}]
+
+df = pd.DataFrame(datos)
+st.text('Es un ejemplo son solo datos inventados')
+st.dataframe(df)
+"""
+
+st.subheader("📄 Código fuente:")
+st.code(codigo, language='python')
+
+datos = [{'Etnias en colombia': 'indijenas de colombia', 'Poblacion': 500, 'Pais': 'colombia'},
+         {'Etnias en colombia': 'Afrocolombianos', 'Poblacion': 869, 'Pais': 'colombia'},
+         {'Etnias en colombia': 'El pueblo rom', 'Poblacion': 143, 'Pais': 'colombia'}]
+
+df = pd.DataFrame(datos)
+st.text('Es un ejemplo son solo datos inventados')
+st.dataframe(df)
