@@ -3,7 +3,7 @@ import pandas as pd
 
 # Configuración de la página
 st.set_page_config(   
-    page_icon="📌",
+    page_icon="🐍",
     layout="wide"
 )
 
@@ -146,6 +146,13 @@ st.dataframe(df)
 
 st.header('Archivo Excel (local):')
 
+code = """
+df = pd.read_excel('static/data.xlsx', engine='openpyxl') Archivo loca debes poner uno que se encuentre en tu computadara
+st.text('Datos desde Excel')
+st.dataframe(df)
+"""
+st.subheader('📄 Código fuente:')
+st.code(code, language='python')
 
 df = pd.read_excel('static/data.xlsx', engine='openpyxl')
 st.text('Datos desde Excel')

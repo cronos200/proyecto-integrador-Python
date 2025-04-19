@@ -1,12 +1,13 @@
 import streamlit as st
+import pandas as pd
 
 # Configuración de la página
 st.set_page_config(   
-    page_icon="📌",
+    page_icon="🐍",
     layout="wide"
 )
 
-st.title("Momento 3 - Actividad 1")
+st.title("Momento 2 - Actividad 2")
 
 st.header("Descripción de la actividad")
 st.markdown("""
@@ -25,5 +26,23 @@ st.markdown("""
 - Aplicar estos conocimientos en ejemplos prácticos
 """)
 
-st.header("Solución")
+st.header("Solución Activiada #2")
+
+df = pd.read_csv("datasest/estudiantes_colombia.csv")
+st.dataframe(df)
+st.header("Ver las 5 filas y las ultimas 5 filas del dataframe")
+st.subheader("¿como se hizo?")
+
+codigo = """
+df = pd.read_csv("datasest/estudiantes_colombia.csv")
+st.write(df.head()) Primera 5 filas
+st.write(df.tail()) Ultimas 5 filas
+"""
+st.subheader("📄 Código fuente:")
+st.code(codigo, language='python')
+
+st.subheader("Primera 5 filas")
+st.write(df.head())
+st.subheader("Ultimas 5 filas")
+st.write(df.tail())
 

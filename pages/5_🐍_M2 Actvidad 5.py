@@ -2,11 +2,11 @@ import streamlit as st
 
 # Configuración de la página
 st.set_page_config(   
-    page_icon="📌",
+    page_icon="🐍",
     layout="wide"
 )
 
-st.title("Momento 3 - Actividad 3")
+st.title("Momento 2 - Actividad 5")
 
 st.header("Descripción de la actividad")
 st.markdown("""

@@ -1,12 +1,14 @@
 import streamlit as st
+import pandas as pd
+import faker
 
 # Configuración de la página
 st.set_page_config(   
-    page_icon="📌",
+    page_icon="🐍",
     layout="wide"
 )
 
-st.title("Momento 2 - Actividad 4")
+st.title("Momento 2 - Actividad 3")
 
 st.header("Descripción de la actividad")
 st.markdown("""
@@ -26,4 +28,9 @@ st.markdown("""
 """)
 
 st.header("Solución")
+
+st.title("Accede a mi notebook en Google Colab")
+
+st.write("Puedes ver el código y ejecutarlo en este enlace:")
+st.markdown("[👉 Abrir en Google Colab](https://colab.research.google.com/drive/1gZgKSP1CeglxKAlv7rsyOtL9LDIMSk5Y)")
 
