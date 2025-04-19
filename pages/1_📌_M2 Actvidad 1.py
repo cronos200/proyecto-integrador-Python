@@ -76,3 +76,52 @@ datos = [{'Etnias en colombia': 'indijenas de colombia', 'Poblacion': 500, 'Pais
 df = pd.DataFrame(datos)
 st.text('Es un ejemplo son solo datos inventados')
 st.dataframe(df)
+
+
+st.header("Lista de listas:")
+
+codigo = """
+datos = [['Celulares', 50000,46],
+         ['Maletas', 12000,100],
+         ['Teclados', 2000,29]]
+
+df = pd.DataFrame(datos, columns=['Producto', 'Precio', 'Cantidad'])
+st.text('Productos en Inventario')
+st.dataframe(df)
+"""
+
+st.subheader("📄 Código fuente:")
+st.code(codigo, language='python')
+
+# nombre del producto, precio y cantidad en stock (usa datos inventados).
+datos = [['Celulares', 50000,46],
+         ['Maletas', 12000,100],
+         ['Teclados', 2000,29]]
+
+df = pd.DataFrame(datos, columns=['Producto', 'Precio', 'Cantidad'])
+st.text('Productos en Inventario')
+st.dataframe(df)
+
+
+st.header('Series:')
+
+codigo ="""
+nombres = pd.Series(['Lina', 'Cristian', 'Mateo'])
+edades = pd.Series([25,38,18])
+ciudades = pd.Series(['Bogota', 'Medellin', 'Cartagena'])
+
+df = pd.DataFrame({'Nombres': nombres, 'Edades': edades, 'Ciudades': ciudades})
+st.text('Datos de Personas')
+st.dataframe(df)
+"""
+st.subheader("📄 Código fuente:")
+st.code(codigo, language='python')
+
+# una con nombres de personas, otra con sus edades y otra con sus ciudades 
+nombres = pd.Series(['Lina', 'Cristian', 'Mateo'])
+edades = pd.Series([25,38,18])
+ciudades = pd.Series(['Bogota', 'Medellin', 'Cartagena'])
+
+df = pd.DataFrame({'Nombres': nombres, 'Edades': edades, 'Ciudades': ciudades})
+st.text('Datos de Personas')
+st.dataframe(df)
