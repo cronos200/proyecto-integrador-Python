@@ -125,3 +125,28 @@ ciudades = pd.Series(['Bogota', 'Medellin', 'Cartagena'])
 df = pd.DataFrame({'Nombres': nombres, 'Edades': edades, 'Ciudades': ciudades})
 st.text('Datos de Personas')
 st.dataframe(df)
+
+
+
+st.header('Archivo CSV (local):')
+
+code = """
+df = pd.read_csv('datasest/data.csv') El archivo es local para que te funcione pega la direccion de un archivo CSV de tu computadora 
+st.text('Datos desde CSV')
+st.dataframe(df)
+"""
+
+st.subheader("📄 Código fuente:")
+st.code(code, language='python')
+
+df = pd.read_csv('datasest/data.csv')
+st.text('Datos desde CSV')
+st.dataframe(df)
+
+
+st.header('Archivo Excel (local):')
+
+
+df = pd.read_excel('static/data.xlsx', engine='openpyxl')
+st.text('Datos desde Excel')
+st.dataframe(df)
