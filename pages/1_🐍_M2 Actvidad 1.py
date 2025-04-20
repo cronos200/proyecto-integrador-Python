@@ -1,6 +1,7 @@
 import streamlit as st
 import pandas as pd
 import sqlite3
+import numpy as np
 
 # Configuración de la página
 st.set_page_config(   
@@ -193,9 +194,34 @@ st.title('Datos desde SQLite')
 st.dataframe(df)
 """
 
+st.subheader('📄 Código fuente:')
+st.code(code, language='python')
+
 conn = sqlite3.connect('estudiantes.db')    
 df = pd.read_sql('SELECT * FROM estudiantes', conn)  
 conn.close()  
 
 st.title('Datos desde SQLite')
+st.dataframe(df)
+
+
+st.header('Array de NumPy:')
+code = """
+datos = np.array([['Moto', 5000000, '2026/02/12'],
+                  ['Carro', 8000000, '2020/08/02'],
+                  ['Avion', 15000000, '2015/12/30']])
+
+df = pd.DataFrame(datos, columns=['Producto', 'Precio', 'Modelo'])
+st.text('Datos desde NumPy')
+st.dataframe(df)
+"""
+st.subheader('📄 Código fuente:')
+st.code(code, language='python')
+
+datos = np.array([['Moto', 5000000, '2026/02/12'],
+                  ['Carro', 8000000, '2020/08/02'],
+                  ['Avion', 15000000, '2015/12/30']])
+
+df = pd.DataFrame(datos, columns=['Producto', 'Precio', 'Modelo'])
+st.text('Datos desde NumPy')
 st.dataframe(df)
