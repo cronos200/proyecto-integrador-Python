@@ -1,5 +1,6 @@
 import streamlit as st
 import pandas as pd
+import sqlite3
 
 # Configuración de la página
 st.set_page_config(   
@@ -29,7 +30,6 @@ st.markdown("""
 st.header("Solución de la actividad #1")
 
 st.subheader('Diccionario:')
-
 codigo = '''
 nombre = pd.Series(['luis', 'jhon', 'camilo', 'ana', 'sofia'])
 edad = pd.Series([25,46,32,12,26])
@@ -55,7 +55,6 @@ st.dataframe(df)
 
 
 st.header("Lista de diccionarios:")
-
 codigo = """
 datos = [{'Etnias en colombia': 'indijenas de colombia', 'Poblacion': 500, 'Pais': 'colombia'},
          {'Etnias en colombia': 'Afrocolombianos', 'Poblacion': 869, 'Pais': 'colombia'},
@@ -79,7 +78,6 @@ st.dataframe(df)
 
 
 st.header("Lista de listas:")
-
 codigo = """
 datos = [['Celulares', 50000,46],
          ['Maletas', 12000,100],
@@ -104,7 +102,6 @@ st.dataframe(df)
 
 
 st.header('Series:')
-
 codigo ="""
 nombres = pd.Series(['Lina', 'Cristian', 'Mateo'])
 edades = pd.Series([25,38,18])
@@ -129,7 +126,6 @@ st.dataframe(df)
 
 
 st.header('Archivo CSV (local):')
-
 code = """
 df = pd.read_csv('datasest/data.csv') El archivo es local para que te funcione pega la direccion de un archivo CSV de tu computadora 
 st.text('Datos desde CSV')
@@ -145,7 +141,6 @@ st.dataframe(df)
 
 
 st.header('Archivo Excel (local):')
-
 code = """
 df = pd.read_excel('static/data.xlsx', engine='openpyxl') Archivo loca debes poner uno que se encuentre en tu computadara
 st.text('Datos desde Excel')
@@ -156,4 +151,51 @@ st.code(code, language='python')
 
 df = pd.read_excel('static/data.xlsx', engine='openpyxl')
 st.text('Datos desde Excel')
+st.dataframe(df)
+
+
+st.header('Archivo JSON:')
+code = """
+df = pd.read_json('datasest/datos.json')
+st.text('Datos de Usuarios desde JSON')
+st.dataframe(df)
+"""
+st.subheader('📄 Código fuente:')
+st.code(code, language='Python')
+
+df = pd.read_json('datasest/datos.json')
+st.text('Datos de Usuarios desde JSON')
+st.dataframe(df)
+
+
+st.header('URL:')
+code = """
+df = pd.read_csv('https://datahub.io/core/gdp/r/gdp.csv')
+st.text('Datos desde URL')
+st.dataframe(df)
+"""
+
+st.subheader('📄 Código fuente:')
+st.code(code, language='python')
+
+df = pd.read_csv('https://datahub.io/core/gdp/r/gdp.csv')
+st.text('Datos desde URL')
+st.dataframe(df)
+
+
+st.header('Base de datos SQLite:')
+code = """
+conn = sqlite3.connect('estudiantes.db')    
+df = pd.read_sql('SELECT * FROM estudiantes', conn)  
+conn.close()  
+
+st.title('Datos desde SQLite')
+st.dataframe(df)
+"""
+
+conn = sqlite3.connect('estudiantes.db')    
+df = pd.read_sql('SELECT * FROM estudiantes', conn)  
+conn.close()  
+
+st.title('Datos desde SQLite')
 st.dataframe(df)
