@@ -13,19 +13,19 @@ st.title("Momento 2 - Actividad 1")
 
 st.header("Descripción de la actividad")
 st.markdown("""
-Esta actividad es una introducción práctica a Python y a las estructuras de datos básicas.
-En ella, exploraremos los conceptos fundamentales de Python y aprenderemos a utilizar variables,
-tipos de datos, operadores, y las estructuras de datos más utilizadas como listas, tuplas,
-diccionarios y conjuntos.
+En esta actividad, aprenderás a crear Series y DataFrames utilizando la biblioteca Pandas en Python. 
+Exploraremos las diferentes maneras de construir estas estructuras de datos, así como sus aplicaciones prácticas en el análisis de datos.
+Al finalizar, tendrás una comprensión sólida de cómo manejar y manipular datos utilizando Pandas.
 """)
 
 st.header("Objetivos de aprendizaje")
 
 st.markdown("""
-- Comprender los tipos de datos básicos en Python
-- Aprender a utilizar variables y operadores
-- Dominar las estructuras de datos fundamentales
-- Aplicar estos conocimientos en ejemplos prácticos
+- Entender las estructuras de datos de Pandas
+- Crear Series y DataFrames
+- Manipular datos
+- Realizar análisis básico de datos
+- Aplicar conocimientos prácticos
 """)
 
 st.header("Solución de la actividad #1")
